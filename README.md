@@ -1,5 +1,3 @@
-# BI_NGO-2026-Wikimedia-Polska
-
 # BI_NGO 2026 – Wikimedia Polska
 
 Repozytorium zawiera dane udostępnione w ramach projektu wolontariatu analitycznego **BI_NGO 2026**, realizowanego we współpracy z [**Wikimedia Polska**](https://wikimedia.pl/).
