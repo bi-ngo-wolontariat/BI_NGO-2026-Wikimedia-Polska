@@ -1,5 +1,47 @@
 # Słownik danych — #BI_NGO na 25-lecie Wikipedii
 
+## Pliki statystyczne Wikistats (CSV)
+
+Trzon nagłówka większości plików jest wspólny — poniżej raz, potem per plik tylko kolumna wartości i niuanse.
+
+**Kolumny wspólne**
+
+| kolumna | typ | opis |
+|---|---|---|
+| `page_id` | int | Unikalny identyfikator treści. |
+| `month` | datetime | Miesiąc opisywany wierszem, ISO `YYYY-MM-01T00:00:00.000Z`. |
+| `total.total` | int | Wartość metryki (całość) - znaczenie zależy od pliku. |
+| `total.content` / `total.non-content` | int | Wartość dla przestrzeni treściowych / nietreściowych. |
+| `total.desktop` / `total.mobile-web` / `total.mobile-app` | int | Odsłony wg **metody dostępu** (`mobile-app` bywa puste, np. dla `spider` we wczesnych latach). |
+| `total.user` / `total.spider` / `total.automated` | int | Odsłony wg **typu agenta** (człowiek / deklarowany bot / heurystycznie automatyczny). |
+
+
+### Oglądalność wg typu agenta
+Rozróżnienie `spider` / `automated` wprowadzono w 1. połowie 2020 r.; dla wcześniejszych miesięcy `automated` jest puste.
+
+- **`1-oglodalnosc_monthly.csv`** — jeden plik agregujący wszystkie typy agentów. Kolumny: `month, agent, total.mobile-app, total.desktop, total.mobile-web`. Kolumna `agent` może przyjmować wartości `user` / `spider` / `automated`. Trzy `total.*` = podział odsłon danego agenta wg metody dostępu. Plik ma format „długi" (2 wiersze/miesiąc do 2020, potem 3).
+
+### Użytkownicy, redaktorzy, nowe strony
+- **`2-nowe_rejestracje_monthly.csv`** — nowo zarejestrowani użytkownicy (`total.total`); realnie dane od IX 2005. *Rozbieżność do wyjaśnienia:* suma ≈ 750 tys. vs ≈ 1,5 mln w statystykach plwiki.
+- - **`3-nowe_artykuly_monthly.csv`** — nowe strony w przestrzeni treściowej (`total.content`; artykuły ns0).
+- Liczby nowych stron **nie uwzględniają usunięć**, więc suma przekracza bieżącą liczbę artykułów. Dok.: `meta.wikimedia.org/wiki/Research:Wikistats_metrics/New_pages`.
+- **`4-aktywni_edytorzy_monthly.csv`** — aktywni edytorzy (≥ 5 edycji/mies.). `month, total.total,`; `total.total` = liczba edytorów.
+
+### Rankingi oglądalności
+- **`5-top_1000_artykulow_monthly.csv`** — miesięczne rankingi TOP-1000. Kolumny: `page_id, year, month, rank, title, views`. `month` jako liczba (`7`), `title` ze spacjami. Po odsianiu Strony głównej i stron specjalnych zostaje ok. 990 artykułów/miesiąc.
+- **`6-polskie_artykuly_w_top_1000_monthly.csv`** — ta sama struktura; artykuły kiedykolwiek w TOP-1000, obecnie występujące **wyłącznie** w plwiki (ok. 3300).
+
+### Edycje
+- **`7-top_100_najczesciej_edytowanych_artykulow_monthly.csv`** — miesięczne rankingi najczęściej edytowanych stron: `page_id, year, month, rank, title, edits`. Brak wersji rocznej; wczesne miesiące i dalsze pozycje bywają mało interesujące (dużo stron technicznych).
+-  **`8-edycje_uzytkownikow_monthly.csv`** — miesięczne edycje. Kolumny: `month, editor_type, total.content, total.non-content`. `editor_type` ∈ {`user` (zarejestrowani), `anonymous` (anonimowi), `group-bot` (oficjalne boty), `name-bot` (heurystycznie uznane za bota)}; `total.content`/`total.non-content` = edycje wg typu strony. Format „długi" (kilka wierszy/miesiąc). **⚠ Defekt danych:** kolumny `month` są zniekształcone (np. `2001--0-9-T00:00:00.000Z` zamiast `2001-09-01T...`).
+
+
+---
+
+
+
+
+
 Opis kolumn w plikach udostępnianych uczestnikom. Jeden wspólny słownik dla wszystkich zbiorów; każdy plik ma osobną sekcję.
 
 ## Konwencje ogólne
@@ -86,48 +128,7 @@ Surowy wynik zapytania SPARQL (nagłówki z prefiksem `?`, URI w `<...>`, string
 
 ---
 
-## Pliki statystyczne Wikistats (CSV)
 
-Trzon nagłówka większości plików jest wspólny — poniżej raz, potem per plik tylko kolumna wartości i niuanse.
-
-**Kolumny wspólne**
-
-| kolumna | typ | opis |
-|---|---|---|
-| `month` | datetime | Miesiąc opisywany wierszem, ISO `YYYY-MM-01T00:00:00.000Z`. |
-| `timeRange.start` / `timeRange.end` | datetime | Początek i koniec zakresu (zwykle pierwszy dzień danego i następnego miesiąca). |
-| `total.total` | int | Wartość metryki (całość) — znaczenie zależy od pliku. |
-| `total.content` / `total.non-content` | int | Wartość dla przestrzeni treściowych / nietreściowych. |
-| `total.desktop` / `total.mobile-web` / `total.mobile-app` | int | Odsłony wg **metody dostępu** (`mobile-app` bywa puste, np. dla `spider` we wczesnych latach). |
-| `total.user` / `total.spider` / `total.automated` | int | Odsłony wg **typu agenta** (człowiek / deklarowany bot / heurystycznie automatyczny). |
-
-### Oglądalność wg typu agenta — pliki bieżące
-Rozróżnienie `spider` / `automated` wprowadzono w 1. połowie 2020 r.; dla wcześniejszych miesięcy `automated` jest puste.
-
-- **`ogladalnosc_monthly_user.csv`**, **`ogladalnosc_monthly_spider.csv`**, **`ogladalnosc_monthly_automated.csv`** — jeden plik na typ agenta (agent wynika z nazwy). Kolumny: `month, total.mobile-app, total.desktop, total.mobile-web, timeRange.start, timeRange.end`. Trzy `total.*` = podział odsłon danego agenta wg metody dostępu.
-- **`ogladalnosc_monthly_all.csv`** — zestawienie łączące; dochodzi kolumna `agent` o wartościach `user` / `spider` / `automated`, więc format „długi" (2 wiersze/miesiąc do 2020, potem 3). Kolumny: `month, agent, total.mobile-app, total.desktop, total.mobile-web, timeRange.start, timeRange.end`.
-
-### Oglądalność — pliki do wycofania (?)
-- **`oglądalność_Wikipedii_2016_2026_monthly_desktop_mobile.csv`** — odsłony wg metody dostępu, zsumowane po agentach (format „szeroki", kolumny cytowane). **Do zastąpienia** trójką `user`/`spider`/`automated`.
-- **`oglądalność_Wikipedii_2016_2026_monthly_human_bot.csv`** — odsłony wg typu agenta, format „szeroki": `month, total.spider, total.user, timeRange.start, timeRange.end, total.automated`. Uwaga: `total.automated` dopisane na końcu (poza kolejnością) i puste przed 2020. **Do wycofania (?).**
-
-### Rankingi oglądalności
-- **`top_1000.csv`** — miesięczne rankingi TOP-1000. Kolumny: `year, month, rank, title, views`. `month` jako liczba (`7`), `title` ze spacjami. Po odsianiu Strony głównej i stron specjalnych zostaje ok. 990 artykułów/miesiąc.
-- **`only_pl_from_top_1000.csv`** — ta sama struktura; artykuły kiedykolwiek w TOP-1000, obecnie występujące **wyłącznie** w plwiki (ok. 3300).
-
-
-### Redaktorzy, użytkownicy, nowe strony
-- **`active_editors_(5_and_over_edits)_2001_2026_monthly.csv`** — aktywni edytorzy (≥ 5 edycji/mies.). `month, total.total, timeRange.start, timeRange.end`; `total.total` = liczba edytorów.
-- **`newly_registered_users_2001_2026_monthly.csv`** — nowo zarejestrowani użytkownicy (`total.total`); realnie dane od IX 2005. *Rozbieżność do wyjaśnienia:* suma ≈ 750 tys. vs ≈ 1,5 mln w statystykach plwiki.
-- **`new_pages_2001_2026_monthly_all.csv`** — nowe strony we wszystkich przestrzeniach (`total.total`).
-- **`new_pages_2001_2026_monthly_articles.csv`** — nowe strony w przestrzeni treściowej (`total.content`; artykuły ns0).
-- Liczby nowych stron **nie uwzględniają usunięć**, więc suma przekracza bieżącą liczbę artykułów. Dok.: `meta.wikimedia.org/wiki/Research:Wikistats_metrics/New_pages`.
-
-### Edycje
-- **`user_edits_content_non_content_monthly.csv`** — miesięczne edycje. Kolumny: `month, editor_type, total.content, total.non-content, timeRange.start, timeRange.end`. `editor_type` ∈ {`user` (zarejestrowani), `anonymous` (anonimowi), `group-bot` (oficjalne boty), `name-bot` (heurystycznie uznane za bota)}; `total.content`/`total.non-content` = edycje wg typu strony. Format „długi" (kilka wierszy/miesiąc). **⚠ Defekt danych:** kolumny `month` i `timeRange.start` są zniekształcone (np. `2001--0-9-T00:00:00.000Z` zamiast `2001-09-01T...`), a `timeRange.end` bywa w złym miejscu — plik wymaga regeneracji przed dystrybucją.
-- **`top_edited_2001_2026_monthly.csv`** — miesięczne rankingi najczęściej edytowanych stron: `year, month, rank, title, edits`. Brak wersji rocznej; wczesne miesiące i dalsze pozycje bywają mało interesujące (dużo stron technicznych).
-
----
 
 ## Glosariusz metryk
 
