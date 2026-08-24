@@ -33,8 +33,10 @@ Rozróżnienie `spider` / `automated` wprowadzono w 1. połowie 2020 r.; dla wcz
 
 ### Edycje
 - **`7-top_100_najczesciej_edytowanych_artykulow_monthly.csv`** — miesięczne rankingi najczęściej edytowanych stron: `page_id, year, month, rank, title, edits`. Brak wersji rocznej; wczesne miesiące i dalsze pozycje bywają mało interesujące (dużo stron technicznych).
--  **`8-edycje_uzytkownikow_monthly.csv`** — miesięczne edycje. Kolumny: `month, editor_type, total.content, total.non-content`. `editor_type` ∈ {`user` (zarejestrowani), `anonymous` (anonimowi), `group-bot` (oficjalne boty), `name-bot` (heurystycznie uznane za bota)}; `total.content`/`total.non-content` = edycje wg typu strony. Format „długi" (kilka wierszy/miesiąc). **⚠ Defekt danych:** kolumny `month` są zniekształcone (np. `2001--0-9-T00:00:00.000Z` zamiast `2001-09-01T...`).
+- **`8-edycje_uzytkownikow_monthly.csv`** — miesięczne edycje. Kolumny: `month, editor_type, total.content, total.non-content`. `editor_type` ∈ {`user` (zarejestrowani), `anonymous` (anonimowi), `group-bot` (oficjalne boty), `name-bot` (heurystycznie uznane za bota)}; `total.content`/`total.non-content` = edycje wg typu strony. Format „długi" (kilka wierszy/miesiąc). **⚠ Defekt danych:** kolumny `month` są zniekształcone (np. `2001--0-9-T00:00:00.000Z` zamiast `2001-09-01T...`).
 
+### Oglądalność, surowe dane
+W folderze `views_raw_data` znajdują się surowe dane zawierające informacje o oglądalności. Na każdy miesiąc jest osobny spakowany plik z danymi (od 2015-12) zawierający dwie kolumny: `page_id` oraz `views`. Do artykułu za pomocą jego `page_id` można się odwołać za pomocą adresu `<https://pl.wikipedia.org/w/index.php?curid=XXX>`.
 
 ---
 
