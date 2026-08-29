@@ -24,8 +24,8 @@ Poniższe kolumny powtarzają się w kilku zbiorach, ale nie wszystkie występuj
 | `title` | `string` | Tytuł strony lub artykułu. Tytuł może zmieniać się w czasie. |
 | `rank` | `int` | Pozycja strony lub artykułu w rankingu dla danego miesiąca. |
 | `views` | `int` | Liczba wyświetleń strony w określonym miesiącu. |
-| `total.total` | `int` | Łączna wartość metryki w danym miesiącu. Dokładne znaczenie zależy od pliku. |
-| `total.content` | `int` | Wartość dotycząca stron lub edycji znajdujących się w przestrzeni treści. Dokładne znaczenie zależy od pliku. |
+| `total.total` | `int` | Łączna wartość metryki w danym miesiącu. Dokładne znaczenie zależy od pliku. Przykładowo w `2-nowe_rejestracje_monthly.csv` oznacza liczbę nowych zarejestrowanych kont, natomiast w `4-aktywni_edytorzy_monthly.csv` liczbę aktywnych edytorów. |
+| `total.content` | `int` | Wartość dotycząca treści znajdujących się w głównej przestrzeni Wikipedii. Dokładne znaczenie zależy od pliku. Przykładowo w `3-nowe_artykuly_monthly.csv` oznacza liczbę nowych artykułów, natomiast w `8-edycje_uzytkownikow_monthly.csv` liczbę wykonanych edycji. |
 
 ## 1. `1-ogladalnosc_monthly.csv`
 
@@ -40,7 +40,7 @@ Każdy wiersz odpowiada jednemu miesiącowi i jednej kategorii ruchu określonej
 | Kolumna | Typ | Opis |
 |---|---|---|
 | `month` | `datetime` | Opis znajduje się w sekcji [Wspólne kolumny](#wspólne-kolumny). |
-| `agent` | `string` | Typ ruchu zarejestrowanego w danych, np. `user` lub `spider`. |
+| `agent` | `string` | Typ ruchu zarejestrowanego w danych, np. `user` lub `spider`. Zobacz dokładną definicję [Typ agenta](#typ-agenta).|
 | `total.mobile-app` | `int` | Liczba wyświetleń z aplikacji mobilnej dla danego miesiąca i typu ruchu. |
 | `total.desktop` | `int` | Liczba wyświetleń z komputerów dla danego miesiąca i typu ruchu. |
 | `total.mobile-web` | `int` | Liczba wyświetleń z mobilnej wersji strony dla danego miesiąca i typu ruchu. |
@@ -50,37 +50,14 @@ Każdy wiersz odpowiada jednemu miesiącowi i jednej kategorii ruchu określonej
 - Liczba wyświetleń nie jest równoznaczna z liczbą osób odwiedzających Wikipedię.
 - Jeden użytkownik może wygenerować wiele wyświetleń.
 - Puste pole nie oznacza braku ruchu, lecz brak dostępnej wartości w źródle.
-- Nie wszystkie sposoby dostępu muszą być dostępne dla każdej kategorii `agent`.
 - Przed sumowaniem danych należy uwzględnić zarówno miesiąc, jak i typ ruchu zapisany w kolumnie `agent`.
 - Sposób klasyfikowania ruchu automatycznego może zmieniać się w czasie, dlatego nie wszystkie kategorie muszą być dostępne dla całego analizowanego okresu.
 
-## 2. `2-nowe_rejestracje_monthly.csv`
+## 2. `2-nowe_artykuly_monthly.csv`
 
-[Przejdź do pliku](dane/2-nowe_rejestracje_monthly.csv)
+[Przejdź do pliku](dane/2-nowe_artykuly_monthly.csv)
 
-Zbiór zawiera miesięczną liczbę nowych kont zarejestrowanych w polskiej Wikipedii.
-
-Każdy wiersz odpowiada jednemu miesiącowi.
-
-### Dostępne kolumny
-
-| Kolumna | Typ |
-|---|---|
-| `month` | `datetime` |
-| `total.total` | `int` |
-
-### Ograniczenia i uwagi
-
-- Rejestracja konta nie oznacza, że użytkownik rozpoczął edytowanie Wikipedii.
-- Jeden użytkownik może posiadać więcej niż jedno konto.
-- Dane nie opisują aktywności użytkownika po rejestracji.
-- Liczba rejestracji nie powinna być interpretowana jako liczba aktywnych redaktorów.
-
-## 3. `3-nowe_artykuly_monthly.csv`
-
-[Przejdź do pliku](dane/3-nowe_artykuly_monthly.csv)
-
-Zbiór zawiera miesięczną liczbę nowych stron utworzonych w przestrzeni treści polskiej Wikipedii.
+Zbiór zawiera miesięczną liczbę nowych stron utworzonych w przestrzeni treści polskiej Wikipedii (z wykluczeniem stron technicznychi pomocniczych).
 
 Każdy wiersz odpowiada jednemu miesiącowi.
 
@@ -96,7 +73,31 @@ Każdy wiersz odpowiada jednemu miesiącowi.
 - Dane opisują liczbę utworzonych stron, a nie zmianę całkowitej liczby istniejących artykułów.
 - Zbiór nie uwzględnia późniejszego usunięcia stron.
 - Sumowanie liczby nowych artykułów w czasie nie musi dawać aktualnej liczby artykułów w Wikipedii.
-- Definicja przestrzeni treści wynika z metodologii zastosowanej w źródle Wikimedia.
+- [Definicja przestrzeni treści](#przestrze%C5%84-tre%C5%9Bci) wynika z metodologii zastosowanej w źródle Wikimedia.
+
+## 3. `3-nowe_rejestracje_monthly.csv`
+
+[Przejdź do pliku](dane/3-nowe_rejestracje_monthly.csv)
+
+Zbiór zawiera miesięczną liczbę nowych kont zarejestrowanych w polskiej Wikipedii.
+
+Założenie konta umożliwia aktywne współtworzenie projektów Wikimedia, m.in. edytowanie artykułów, dodawanie plików do Wikimedia Commons czy uzupełnianie danych w Wikidata.
+
+Każdy wiersz odpowiada jednemu miesiącowi.
+
+### Dostępne kolumny
+
+| Kolumna | Typ |
+|---|---|
+| `month` | `datetime` |
+| `total.total` | `int` |
+
+### Ograniczenia i uwagi
+
+- Rejestracja konta nie oznacza, że użytkownik rozpoczął edytowanie Wikipedii.
+- Jeden użytkownik może posiadać więcej niż jedno konto.
+- Dane nie opisują aktywności użytkownika po rejestracji.
+- Liczba rejestracji nie powinna być interpretowana jako liczba aktywnych edytorów.
 
 ## 4. `4-aktywni_edytorzy_monthly.csv`
 
@@ -119,7 +120,7 @@ Każdy wiersz odpowiada jednemu miesiącowi.
 
 - Metryka nie obejmuje wszystkich osób, które wykonały przynajmniej jedną edycję.
 - Ta sama osoba może występować jako aktywny edytor w wielu kolejnych miesiącach.
-- Sumowanie miesięcznych wartości nie daje liczby unikalnych redaktorów w całym okresie.
+- Sumowanie miesięcznych wartości nie daje liczby unikalnych edytorów w całym okresie.
 - Definicja aktywnego edytora może różnić się od definicji wykorzystywanej w innych źródłach.
 
 ## 5. `5-top_1000_artykulow_monthly.csv`
@@ -146,8 +147,7 @@ Każdy wiersz odpowiada jednej stronie zajmującej określoną pozycję w rankin
 
 - Każdy miesiąc stanowi osobny ranking.
 - Ten sam artykuł może występować w wielu miesiącach.
-- Po zastosowaniu filtrów liczba pozycji w danym miesiącu może być mniejsza niż 1000.
-- W danych mogą występować strony techniczne, strona główna lub strony specjalne.
+- Liczba pozycji w miesięcznym rankingu może być mniejsza niż wartość wskazana w jego nazwie, ponieważ z danych odfiltrowano strony techniczne oraz inne strony, które nie są artykułami. Przykładowo w lipcu 2015 roku ranking TOP 1000 zawierał po zastosowaniu tych filtrów 972 artykuły.
 - Zmiana tytułu artykułu nie musi oznaczać zmiany `page_id`.
 - Ranking nie zawiera pełnej historii oglądalności wszystkich artykułów - obejmuje wyłącznie strony znajdujące się w TOP 1000.
 
@@ -155,7 +155,9 @@ Każdy wiersz odpowiada jednej stronie zajmującej określoną pozycję w rankin
 
 [Przejdź do pliku](dane/6-polskie_artykuly_w_top_1000_monthly.csv)
 
-Zbiór zawiera zestawienie artykułów zaklasyfikowanych jako polskie, które pojawiły się w miesięcznych rankingach TOP 1000 najczęściej wyświetlanych stron polskiej Wikipedii.
+Zbiór zawiera zestawienie artykułów dostępnych wyłącznie w polskojęzycznej Wikipedii, czyli nieposiadających odpowiedników w innych wersjach językowych, które w ciągu ostatnich 11 lat znalazły się w miesięcznych rankingach TOP 1000 najczęściej wyświetlanych stron polskiej Wikipedii.
+
+Informacja o tym, czy dany artykuł posiada odpowiednik w innych wersjach językowych Wikipedii, została sprawdzona w lipcu 2026 roku.
 
 Każdy wiersz odpowiada jednemu artykułowi zajmującemu określoną pozycję w rankingu w danym miesiącu.
 
@@ -204,7 +206,7 @@ Każdy wiersz odpowiada jednej stronie zajmującej określoną pozycję w rankin
 - Każdy miesiąc stanowi osobny ranking.
 - Ten sam artykuł może pojawiać się w wielu miesiącach.
 - Zbiór obejmuje jedynie strony znajdujące się w TOP 100, a nie pełną historię edycji wszystkich artykułów.
-- Duża liczba edycji nie musi oznaczać dużej liczby różnych redaktorów.
+- Duża liczba edycji nie musi oznaczać dużej liczby różnych edytorów.
 - Liczba edycji nie pozwala samodzielnie ocenić jakości ani zakresu wprowadzonych zmian.
 
 ## 8. `8-edycje_uzytkownikow_monthly.csv`
@@ -220,7 +222,7 @@ Każdy wiersz odpowiada jednej kategorii edytora w danym miesiącu.
 | Kolumna | Typ | Opis |
 |---|---|---|
 | `month` | `datetime` | |
-| `editor_type` | `string` | Typ edytora zgodnie z klasyfikacją zastosowaną w danych źródłowych. W pliku występują między innymi wartości `anonymous`, `user`, `group-bot` i `name-bot`. |
+| `editor_type` | `string` | [Typ edytora](#typ-edytora) zgodnie z klasyfikacją zastosowaną w danych źródłowych. W pliku występują między innymi wartości `anonymous`, `user`, `group-bot` i `name-bot`. |
 | `total.content` | `int` | Liczba edycji wykonanych w głównej przestrzeni treści. |
 | `total.non-content` | `int` | Liczba edycji wykonanych poza główną przestrzenią treści, np. na stronach dyskusji, stronach użytkowników lub stronach technicznych. |
 
@@ -237,13 +239,11 @@ Każdy wiersz odpowiada jednej kategorii edytora w danym miesiącu.
 
 [Przejdź do pliku](dane/9-biografie.tsv)
 
-Zbiór zawiera dane dotyczące osób posiadających biografie w polskiej Wikipedii. Informacje pochodzą z Wikidata oraz polskiej Wikipedii.
+Zbiór zawiera dane dotyczące osób posiadających biografie w polskiej Wikipedii, dla których istnieje odpowiednie powiązanie z Wikidata. Informacje pochodzą z Wikidata oraz polskiej Wikipedii, lipiec 2026.
 
 Każdy wiersz powinien odpowiadać jednej osobie i powiązanemu z nią artykułowi biograficznemu.
 
 Nazwy części kolumn rozpoczynają się od znaku `?`. Jest to zapis pochodzący z eksportu wyników zapytania SPARQL i stanowi część nazwy kolumny w pliku.
-
-### Dostępne kolumny
 
 ### Dostępne kolumny
 
@@ -341,12 +341,18 @@ Liczba wyświetleń:
 
 ### Typ agenta
 
-W danych dotyczących oglądalności mogą występować różne typy ruchu, między innymi:
+W danych dotyczących oglądalności mogą występować trzy typy ruchu:
 
-- `user` - ruch zaklasyfikowany jako pochodzący od użytkowników,
-- `spider` - ruch robotów indeksujących.
+- `user` – ruch zaklasyfikowany jako pochodzący od użytkowników,
+- `spider` – ruch generowany przez roboty indeksujące,
+- `automated` – pozostały ruch automatyczny, który nie został zaklasyfikowany jako `spider`.
 
-Zakres kategorii może zależeć od okresu i metodologii zastosowanej w danych źródłowych.
+Nie wszystkie typy ruchu są dostępne dla całego analizowanego okresu:
+
+- kategoria `automated` jest dostępna od 2020 roku,
+- ruch `spider` dla aplikacji mobilnej (`mobile-app`) jest dostępny od 2019 roku.
+
+Brak wartości dla wcześniejszych okresów nie oznacza braku takiego ruchu, ale brak dostępnych danych dla danej kategorii.
 
 ### Sposób dostępu
 
@@ -374,14 +380,14 @@ Nie jest to liczba wszystkich osób, które wykonały przynajmniej jedną edycj�
 
 W pliku nr 8 edycje zostały podzielone według kategorii zapisanych w kolumnie `editor_type`.
 
-W danych występują między innymi:
+W danych występują następujące typy edytorów:
 
-- `anonymous`,
-- `user`,
-- `group-bot`,
-- `name-bot`.
+- `anonymous` – edycje wykonane przez użytkowników niezalogowanych,
+- `user` – edycje wykonane przez zarejestrowanych użytkowników, którzy nie zostali zaklasyfikowani jako boty,
+- `group-bot` – edycje wykonane przez zarejestrowane konta należące do grupy botów,
+- `name-bot` – edycje wykonane przez zarejestrowane konta, które nie należą do grupy botów, ale ich nazwa wskazuje, że mogą być botami.
 
-Sama próbka danych nie zawiera pełnej metodologii tych kategorii, dlatego przy szczegółowej interpretacji warto zachować ich oryginalne nazwy.
+Kategorie `group-bot` i `name-bot` pozwalają rozróżnić boty formalnie oznaczone jako boty od kont, które są traktowane jako boty na podstawie ich nazwy. :contentReference[oaicite:0]{index=0}
 
 ### Pozycja w rankingu
 

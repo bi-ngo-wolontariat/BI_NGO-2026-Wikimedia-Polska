@@ -11,10 +11,10 @@ Nie musisz korzystać ze wszystkich plików. Możesz wybrać jeden zbiór, poł�
 ## Najważniejsze linki
 
 - [Strona projektu i szczegółowe informacje o udziale](https://bingo.jezykdanych.pl/)
-- [Dane do analizy](dane/)
 - [Słownik danych](dictionary.md)
-- [Formularz zgłoszenia gotowej wizualizacji](https://docs.google.com/forms/d/e/1FAIpQLSebfpsgvPVQEbwd8dk5UdVomL-DNcmrggKelGgwzLzvf6ebgw/viewform)
-- [Materiały graficzne i identyfikacja wizualna](https://bingo.jezykdanych.pl/)
+- [Dane do analizy](dane/)
+- [Formularz zgłoszenia gotowej wizualizacji](https://docs.google.com/forms/d/e/1FAIpQLSebfpsgvPVQEbwd8dk5UdVomL_DNcmrggKelGgwzLzvf6ebgw/viewform)
+- Materiały graficzne i identyfikacja wizualna znajdziesz na stronie [projektu](https://bingo.jezykdanych.pl/)
 
 Gotową pracę należy zgłosić za pomocą formularza najpóźniej **3 października 2026 roku do końca dnia**.
 
@@ -28,39 +28,39 @@ Więcej informacji o projekcie oraz zasadach udziału znajdziesz na [stronie #BI
 
 Dane znajdują się w folderze [`dane`](dane/).
 
-Zbiory od 1 do 8 zawierają głównie dane zagregowane miesięcznie i mogą być dobrym punktem startowym dla osób początkujących. Plik z biografiami oraz szczegółowe dane o wyświetleniach mają bardziej rozbudowaną strukturę i mogą wymagać dodatkowego przygotowania.
+Zbiory od 1 do 8 zawierają głównie dane zagregowane miesięcznie i mogą być dobrym punktem startowym dla osób początkujących. Plik z biografiami oraz szczegółowe dane o wyświetleniach to zbiory 9 i 10 mają bardziej rozbudowaną strukturę i mogą wymagać dodatkowego przygotowania.
 
 Każdy plik może być analizowany osobno. Część zbiorów posiada również wspólne kolumny, dzięki którym możliwe jest ich łączenie. Szczegółowe informacje znajdziesz w [słowniku danych](dictionary.md).
 
 ### Ogólna aktywność Wikipedii
 
-- [`1-ogladalnosc_monthly.csv`](dane/1-ogladalnosc_monthly.csv) - miesięczne dane dotyczące oglądalności polskiej Wikipedii, z podziałem między innymi na sposób dostępu oraz typ ruchu.
-- [`3-nowe_artykuly_monthly.csv`](dane/3-nowe_artykuly_monthly.csv) - miesięczna liczba nowych artykułów i stron utworzonych w przestrzeni treści polskiej Wikipedii.
+- [`1-ogladalnosc_monthly.csv`](dane/1-ogladalnosc_monthly.csv) - miesięczne dane z ostatnich 10 lat dotyczące oglądalności polskiej Wikipedii, z podziałem między innymi na sposób dostępu oraz typ ruchu
+- [`2-nowe_artykuly_monthly.csv`](dane/2-nowe_artykuly_monthly.csv) - miesięczna liczba nowych artykułów i stron utworzonych w przestrzeni treści polskiej Wikipedii w ostatnich 25 latach.
 
 ### Użytkownicy i redaktorzy
 
-- [`2-nowe_rejestracje_monthly.csv`](dane/2-nowe_rejestracje_monthly.csv) - miesięczna liczba nowych kont zarejestrowanych w polskiej Wikipedii.
-- [`4-aktywni_edytorzy_monthly.csv`](dane/4-aktywni_edytorzy_monthly.csv) - miesięczne dane dotyczące aktywnych edytorów polskiej Wikipedii. Zgodnie z definicją źródłową aktywny edytor to osoba, która wykonała co najmniej pięć edycji w miesiącu.
+- [`3-nowe_artykuly_monthly.csv`](dane/3-nowe_artykuly_monthly.csv) - miesięczna liczba nowych kont zarejestrowanych w polskiej Wikipedii w ostatnich 25 latach.
+- [`4-aktywni_edytorzy_monthly.csv`](dane/4-aktywni_edytorzy_monthly.csv) - miesięczne dane z ostatnich 25 lat dotyczące aktywnych edytorów polskiej Wikipedii. Zgodnie z definicją źródłową aktywny edytor to osoba, która wykonała co najmniej pięć edycji w miesiącu.
 
 ### Rankingi oglądalności
 
-- [`5-top_1000_artykulow_monthly.csv`](dane/5-top_1000_artykulow_monthly.csv) - miesięczne rankingi najczęściej wyświetlanych stron i artykułów polskiej Wikipedii.
-- [`6-polskie_artykuly_w_top_1000_monthly.csv`](dane/6-polskie_artykuly_w_top_1000_monthly.csv) - zestawienie polskich artykułów pojawiających się w miesięcznych rankingach TOP 1000.
+- [`5-top_1000_artykulow_monthly.csv`](dane/5-top_1000_artykulow_monthly.csv) - miesięczne rankingi najczęściej wyświetlanych stron i artykułów polskiej Wikipedii w ostatnich 11 latach.
+- [`6-polskie_artykuly_w_top_1000_monthly.csv`](dane/6-polskie_artykuly_w_top_1000_monthly.csv) - zestawienie artykułów dostępnych wyłącznie w polskojęzycznej Wikipedii, czyli nieposiadających odpowiedników w innych wersjach językowych, które w ciągu ostatnich 11 lat znalazły się w miesięcznych rankingach TOP 1000 najczęściej wyświetlanych stron.
 
 ### Edycje
 
-- [`7-top_100_najczesciej_edytowanych_artykulow_monthly.csv`](dane/7-top_100_najczesciej_edytowanych_artykulow_monthly.csv) - miesięczne rankingi 100 najczęściej edytowanych artykułów.
-- [`8-edycje_uzytkownikow_monthly.csv`](dane/8-edycje_uzytkownikow_monthly.csv) - miesięczne dane dotyczące liczby edycji, z podziałem na typ edytora lub użytkownika.
+- [`7-top_100_najczesciej_edytowanych_artykulow_monthly.csv`](dane/7-top_100_najczesciej_edytowanych_artykulow_monthly.csv) - miesięczne rankingi 100 najczęściej edytowanych artykułów w ostatnich 25 latach.
+- [`8-edycje_uzytkownikow_monthly.csv`](dane/8-edycje_uzytkownikow_monthly.csv) - miesięczne dane w ostatnich 25 lat dotyczące liczby edycji, z podziałem na typ edytora lub użytkownika.
 
 ### Dane biograficzne
 
-- [`9_biografie.tsv`](dane/9_biografie.tsv) - dane dotyczące osób posiadających biografie w polskiej Wikipedii. Zbiór łączy informacje pochodzące z Wikidata i polskiej Wikipedii z informacjami o utworzeniu artykułu oraz jego oglądalności.
+- [`9_biografie.tsv`](dane/9_biografie.tsv) - dane dotyczące osób posiadających biografie w polskiej Wikipedii, dla których udało się odnaleźć odpowiednie powiązania z Wikidata. Zbiór łączy informacje pochodzące z Wikidata i polskiej Wikipedii z danymi o utworzeniu artykułu oraz jego oglądalności.
 
 Plik zawiera między innymi informacje o dacie urodzenia, płci, identyfikatorach Wikidata i Wikipedii, dacie utworzenia artykułu oraz statystykach jego wyświetleń.
 
 ### Szczegółowe dane o wyświetleniach
 
-- [`10-wyswietlenia_monthly_raw_data`](dane/10-wyswietlenia_monthly_raw_data/) - folder zawierający bardziej szczegółowe dane dotyczące miesięcznej oglądalności stron i artykułów.
+- [`10-wyswietlenia_monthly_raw_data`](dane/10-wyswietlenia_monthly_raw_data/) - folder zawierający bardziej szczegółowe dane dotyczące miesięcznej oglądalności stron i artykułów z ostatnich 10 latach.
 
 Dane zostały udostępnione w osobnych plikach dla kolejnych miesięcy. Mogą zostać wykorzystane samodzielnie lub połączone z innymi zbiorami na podstawie wspólnych kolumn, takich jak identyfikator strony i miesiąc obserwacji.
 
@@ -75,9 +75,8 @@ Przed rozpoczęciem analizy zwróć szczególną uwagę na następujące zasady:
 - poszczególne zbiory mogą obejmować różne zakresy czasowe,
 - nie wszystkie wymiary i podziały są dostępne dla całego analizowanego okresu,
 - miesięczne rankingi są niezależnymi zestawieniami dla kolejnych miesięcy,
-- liczba pozycji po zastosowaniu filtrów może być mniejsza niż wartość wskazana w nazwie rankingu,
+- liczba pozycji w miesięcznym rankingu może być mniejsza niż wartość wskazana w jego nazwie, ponieważ z danych odfiltrowano strony techniczne i inne strony, które nie są artykułami. Przykładowo w lipcu 2015 roku ranking TOP 1000 zawiera 972 artykuły po zastosowaniu tych filtrów,
 - nazwy artykułów mogą zmieniać się w czasie, dlatego przy łączeniu danych warto w pierwszej kolejności korzystać z identyfikatora `page_id`,
-- ta sama nazwa kolumny nie zawsze oznacza ten sam poziom agregacji,
 - dane biograficzne obejmują wyłącznie osoby, dla których udało się odnaleźć odpowiednie powiązania między Wikidata i polską Wikipedią.
 
 Dane mogą zawierać uproszczenia wynikające ze sposobu działania źródeł, dostępności danych oraz zastosowanej metody agregacji. Przy interpretacji wyników warto uwzględnić kontekst konkretnego zbioru i opisane w słowniku ograniczenia.
@@ -112,6 +111,8 @@ Dane udostępnione w repozytorium możesz uzupełnić o informacje pochodzące z
 ## Powodzenia
 
 Czekamy na Twoje wizualizacje 💛
+
+Gotową pracę prześlij za pomocą [formularza zgłoszeniowego](https://docs.google.com/forms/d/e/1FAIpQLSebfpsgvPVQEbwd8dk5UdVomL_DNcmrggKelGgwzLzvf6ebgw/viewform) **do 3 października 2026 roku włącznie**.
 
 Masz pytania? Napisz do nas - [bingo.wolontariat@gmail.com](mailto:bingo.wolontariat@gmail.com).
 
