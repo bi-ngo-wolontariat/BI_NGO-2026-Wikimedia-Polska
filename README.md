@@ -8,16 +8,6 @@ Znajdziesz tutaj dziesięć zestawów danych dotyczących między innymi aktywno
 
 Nie musisz korzystać ze wszystkich plików. Możesz wybrać jeden zbiór, połączyć kilka z nich albo uzupełnić analizę o inne publiczne źródła.
 
-## Najważniejsze linki
-
-- [Strona projektu i szczegółowe informacje o udziale](https://bingo.jezykdanych.pl/)
-- [Słownik danych](dictionary.md)
-- [Dane do analizy](dane/)
-- [Formularz zgłoszenia gotowej wizualizacji](https://docs.google.com/forms/d/e/1FAIpQLSebfpsgvPVQEbwd8dk5UdVomL_DNcmrggKelGgwzLzvf6ebgw/viewform)
-- Materiały graficzne i identyfikacja wizualna znajdziesz na stronie [projektu](https://bingo.jezykdanych.pl/)
-
-Gotową pracę należy zgłosić za pomocą formularza najpóźniej **3 października 2026 roku do końca dnia**.
-
 ## O projekcie #BI_NGO
 
 #BI_NGO to wolontariat analityczny, w którym udział mogą wziąć zarówno osoby stawiające swoje pierwsze kroki w analizie danych, jak i te z większym doświadczeniem. Pracę możesz przygotować w dowolnym narzędziu i w wybranej przez siebie formie - jako dashboard, raport, prezentację, infografikę, plakat lub inną wizualizację danych.
@@ -28,9 +18,10 @@ Więcej informacji o projekcie oraz zasadach udziału znajdziesz na [stronie #BI
 
 Dane znajdują się w folderze [`dane`](dane/).
 
-Zbiory od 1 do 8 zawierają głównie dane zagregowane miesięcznie i mogą być dobrym punktem startowym dla osób początkujących. Plik z biografiami oraz szczegółowe dane o wyświetleniach to zbiory 9 i 10 mają bardziej rozbudowaną strukturę i mogą wymagać dodatkowego przygotowania.
+Zbiory od 1 do 8 zawierają głównie dane zagregowane miesięcznie i mogą być dobrym punktem startowym dla osób początkujących. Zbiory 9 i 10, czyli dane biograficzne oraz szczegółowe dane o wyświetleniach, mają bardziej rozbudowaną strukturę i mogą wymagać dodatkowego przygotowania.
 
-Każdy plik może być analizowany osobno. Część zbiorów posiada również wspólne kolumny, dzięki którym możliwe jest ich łączenie. Szczegółowe informacje znajdziesz w [słowniku danych](dictionary.md).
+Każdy plik może być analizowany osobno. Część zbiorów ma również wspólne kolumny, dzięki którym możliwe jest ich łączenie. **Zachęcamy, aby przed rozpoczęciem analizy przejrzeć opisy wszystkich dostępnych zbiorów w tej sekcji** dzięki temu łatwo zorientujesz się, jakie dane są dostępne i które zbiory mogą być dla Ciebie najbardziej interesujące. Szczegółowe informacje o kolumnach, ograniczeniach oraz wyjaśnienia nazw własnych i kategorii występujących w wybranych zbiorach znajdziesz w [słowniku danych](dictionary.md).
+
 
 ### Ogólna aktywność Wikipedii
 
@@ -39,7 +30,7 @@ Każdy plik może być analizowany osobno. Część zbiorów posiada również w
 
 ### Użytkownicy i redaktorzy
 
-- [`3-nowe_artykuly_monthly.csv`](dane/3-nowe_artykuly_monthly.csv) - miesięczna liczba nowych kont zarejestrowanych w polskiej Wikipedii w ostatnich 25 latach.
+- [`3-nowe_rejestracje_monthly.csv`](dane/3-nowe_rejestracje_monthly.csv) - miesięczna liczba nowych kont zarejestrowanych w polskiej Wikipedii w ostatnich 25 latach.
 - [`4-aktywni_edytorzy_monthly.csv`](dane/4-aktywni_edytorzy_monthly.csv) - miesięczne dane z ostatnich 25 lat dotyczące aktywnych edytorów polskiej Wikipedii. Zgodnie z definicją źródłową aktywny edytor to osoba, która wykonała co najmniej pięć edycji w miesiącu.
 
 ### Rankingi oglądalności
@@ -54,7 +45,7 @@ Każdy plik może być analizowany osobno. Część zbiorów posiada również w
 
 ### Dane biograficzne
 
-- [`9_biografie.tsv`](dane/9_biografie.tsv) - dane dotyczące osób posiadających biografie w polskiej Wikipedii, dla których udało się odnaleźć odpowiednie powiązania z Wikidata. Zbiór łączy informacje pochodzące z Wikidata i polskiej Wikipedii z danymi o utworzeniu artykułu oraz jego oglądalności.
+- [`9-biografie.tsv`](dane/9-biografie.tsv) - dane dotyczące osób posiadających biografie w polskiej Wikipedii, dla których udało się odnaleźć odpowiednie powiązania z Wikidata. Zbiór łączy informacje pochodzące z Wikidata i polskiej Wikipedii z danymi o utworzeniu artykułu oraz jego oglądalności.
 
 Plik zawiera między innymi informacje o dacie urodzenia, płci, identyfikatorach Wikidata i Wikipedii, dacie utworzenia artykułu oraz statystykach jego wyświetleń.
 
@@ -80,6 +71,16 @@ Przed rozpoczęciem analizy zwróć szczególną uwagę na następujące zasady:
 - dane biograficzne obejmują wyłącznie osoby, dla których udało się odnaleźć odpowiednie powiązania między Wikidata i polską Wikipedią.
 
 Dane mogą zawierać uproszczenia wynikające ze sposobu działania źródeł, dostępności danych oraz zastosowanej metody agregacji. Przy interpretacji wyników warto uwzględnić kontekst konkretnego zbioru i opisane w słowniku ograniczenia.
+
+## Najważniejsze linki
+
+- [Strona projektu i szczegółowe informacje o udziale](https://bingo.jezykdanych.pl/)
+- [Słownik danych](dictionary.md)
+- [Dane do analizy](dane/)
+- [Formularz zgłoszenia gotowej wizualizacji](https://docs.google.com/forms/d/e/1FAIpQLSebfpsgvPVQEbwd8dk5UdVomL_DNcmrggKelGgwzLzvf6ebgw/viewform)
+- Materiały graficzne i identyfikacja wizualna znajdziesz na stronie [projektu](https://bingo.jezykdanych.pl/)
+
+Gotową pracę należy zgłosić za pomocą formularza najpóźniej **3 października 2026 roku do końca dnia**.
 
 ## Źródła danych i zasady wykorzystania
 
