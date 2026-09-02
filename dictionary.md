@@ -395,6 +395,43 @@ Kolumna `rank` określa pozycję artykułu lub strony w rankingu dla konkretnego
 
 Pozycji z różnych miesięcy nie należy traktować jako jednego ciągłego rankingu. Każdy miesiąc stanowi osobne zestawienie.
 
+## Źródła danych i licencje
+
+### Skąd pochodzą dane
+
+| Plik | Źródło | Licencja danych |
+|---|---|---|
+| 1-4 | Wikistats 2 / Wikimedia Analytics API (AQS) | CC0 1.0 |
+| 5, 6 | Zrzuty `pageview_complete` (dumps.wikimedia.org), uzupełnione o metadane stron polskiej Wikipedii | CC0 1.0 |
+| 7 | Statystyki edycji polskiej Wikipedii (Wikimedia Analytics) | CC0 1.0 |
+| 8 | Wikistats 2 / Wikimedia Analytics API (AQS) | CC0 1.0 |
+| 9 | Wikidata (zapytanie SPARQL) oraz polska Wikipedia | CC0 1.0 (Wikidata), CC BY-SA 4.0 (Wikipedia) |
+| 10 | Zrzuty `pageview_complete` (dumps.wikimedia.org) | CC0 1.0 |
+
+Dane o oglądalności i edycjach pochodzące z Wikimedia Analytics są udostępniane na zasadach [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/deed.pl), czyli w domenie publicznej - zobacz [informację licencyjną dumps.wikimedia.org](https://dumps.wikimedia.org/legal.html).
+
+Dane strukturalne z Wikidata są udostępniane na zasadach CC0 1.0 - zobacz [Wikidata:Licensing](https://www.wikidata.org/wiki/Wikidata:Licensing).
+
+Treść artykułów polskiej Wikipedii jest udostępniana na licencji [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.pl) oraz GFDL. Same tytuły artykułów i identyfikatory stron obecne w tych zbiorach są krótkimi danymi faktograficznymi, ale jeżeli w pracy konkursowej wykorzystasz fragmenty treści artykułów, obowiązuje licencja CC BY-SA 4.0 wraz z wymogiem podania autorstwa.
+
+### Jak cytować dane
+
+Przy publikacji wyników warto podać źródło, zbiór i datę pobrania, na przykład:
+
+- Wikimedia Foundation, *Pageview complete dumps*, dumps.wikimedia.org, dane pobrane w lipcu 2026 (CC0 1.0).
+- Wikidata contributors, *Wikidata*, zapytanie SPARQL wykonane w lipcu 2026 (CC0 1.0).
+- Wikipedia contributors, *Wikipedia, wolna encyklopedia* (wersja polskojęzyczna), dane pobrane w lipcu 2026 (CC BY-SA 4.0).
+
+Dodatkowo warto podać link do repozytorium projektu #BI_NGO, z którego pochodzą przygotowane zbiory.
+
+### Linki do źródeł
+
+- [Wikistats 2 - polska Wikipedia](https://stats.wikimedia.org/#/pl.wikipedia.org) - interaktywne statystyki, na których opierają się pliki 1-4 i 8.
+- [Wikimedia Analytics API - dokumentacja](https://doc.wikimedia.org/generated-data-platform/aqs/analytics-api/) oraz [punkt dostępowy API](https://wikimedia.org/api/rest_v1/) - jeżeli chcesz pobrać dane samodzielnie lub rozszerzyć ich zakres.
+- [Zrzuty `pageview_complete`](https://dumps.wikimedia.org/other/pageview_complete/) i [ich opis](https://dumps.wikimedia.org/other/pageview_complete/readme.html) - źródło plików 5-7 i 10.
+- [Wikidata Query Service](https://query.wikidata.org/) - oficjalny punkt wykonywania zapytań SPARQL do Wikidata.
+- [Warunki korzystania z projektów Wikimedia](https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use) oraz [polityka User-Agent](https://foundation.wikimedia.org/wiki/Policy:Wikimedia_Foundation_User-Agent_Policy) - jeżeli pobierasz dane z API we własnym skrypcie, ustaw opisowy nagłówek `User-Agent` z kontaktem do siebie.
+
 ---
 
 Szczegółowe informacje o projekcie, zasadach udziału i zgłoszeniu gotowej pracy znajdziesz w [README](README.md).
