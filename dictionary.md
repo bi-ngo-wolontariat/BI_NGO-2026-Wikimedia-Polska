@@ -254,6 +254,7 @@ Nazwy części kolumn rozpoczynają się od znaku `?`. Jest to zapis pochodzący
 | `?article` | `string` | Pełny adres artykułu biograficznego w polskiej Wikipedii. |
 | `?name` | `string` | Nazwa lub etykieta osoby pobrana z Wikidata. |
 | `?genderLabel` | `string` | Etykieta płci pobrana z Wikidata. |
+| `?created_date` | `date` | Data utworzenia artykułu. |
 | `?dateOfBirth` | `date` | Data urodzenia pobrana z Wikidata. Jej dokładność zależy od informacji dostępnych w źródle. |
 | `?year` | `int` | Rok urodzenia wyodrębniony z daty urodzenia. |
 | `?month` | `int` | Miesiąc urodzenia wyodrębniony z daty urodzenia. Może być pusty, jeśli dokładny miesiąc nie jest znany. |
