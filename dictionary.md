@@ -24,8 +24,8 @@ Poniższe kolumny powtarzają się w kilku zbiorach, ale nie wszystkie występuj
 | `title` | `string` | Tytuł strony lub artykułu. Tytuł może zmieniać się w czasie. |
 | `rank` | `int` | Pozycja strony lub artykułu w rankingu dla danego miesiąca. |
 | `views` | `int` | Liczba wyświetleń strony w określonym miesiącu. |
-| `total.total` | `int` | Łączna wartość metryki w danym miesiącu. Dokładne znaczenie zależy od pliku. Przykładowo w `2-nowe_rejestracje_monthly.csv` oznacza liczbę nowych zarejestrowanych kont, natomiast w `4-aktywni_edytorzy_monthly.csv` liczbę aktywnych edytorów. |
-| `total.content` | `int` | Wartość dotycząca treści znajdujących się w głównej przestrzeni Wikipedii. Dokładne znaczenie zależy od pliku. Przykładowo w `3-nowe_artykuly_monthly.csv` oznacza liczbę nowych artykułów, natomiast w `8-edycje_uzytkownikow_monthly.csv` liczbę wykonanych edycji. |
+| `total.total` | `int` | Łączna wartość metryki w danym miesiącu. Dokładne znaczenie zależy od pliku. Przykładowo w `3-nowe_rejestracje_monthly.csv` oznacza liczbę nowych zarejestrowanych kont, natomiast w `4-aktywni_edytorzy_monthly.csv` liczbę aktywnych edytorów. |
+| `total.content` | `int` | Wartość dotycząca treści znajdujących się w głównej przestrzeni Wikipedii. Dokładne znaczenie zależy od pliku. Przykładowo w `2-nowe_artykuly_monthly.csv` oznacza liczbę nowych artykułów, natomiast w `8-edycje_uzytkownikow_monthly.csv` liczbę wykonanych edycji. |
 
 ## 1. `1-ogladalnosc_monthly.csv`
 
@@ -57,7 +57,7 @@ Każdy wiersz odpowiada jednemu miesiącowi i jednej kategorii ruchu określonej
 
 [Przejdź do pliku](dane/2-nowe_artykuly_monthly.csv)
 
-Zbiór zawiera miesięczną liczbę nowych stron utworzonych w przestrzeni treści polskiej Wikipedii (z wykluczeniem stron technicznychi pomocniczych).
+Zbiór zawiera miesięczną liczbę nowych stron utworzonych w przestrzeni treści polskiej Wikipedii (z wykluczeniem stron technicznych i pomocniczych).
 
 Każdy wiersz odpowiada jednemu miesiącowi.
 
@@ -387,7 +387,7 @@ W danych występują następujące typy edytorów:
 - `group-bot` – edycje wykonane przez zarejestrowane konta należące do grupy botów,
 - `name-bot` – edycje wykonane przez zarejestrowane konta, które nie należą do grupy botów, ale ich nazwa wskazuje, że mogą być botami.
 
-Kategorie `group-bot` i `name-bot` pozwalają rozróżnić boty formalnie oznaczone jako boty od kont, które są traktowane jako boty na podstawie ich nazwy. :contentReference[oaicite:0]{index=0}
+Kategorie `group-bot` i `name-bot` pozwalają rozróżnić boty formalnie oznaczone jako boty od kont, które są traktowane jako boty na podstawie ich nazwy.
 
 ### Pozycja w rankingu
 
