@@ -77,6 +77,7 @@ Dane mogą zawierać uproszczenia wynikające ze sposobu działania źródeł, d
 - [Strona projektu i szczegółowe informacje o udziale](https://bingo.jezykdanych.pl/)
 - [Słownik danych](dictionary.md)
 - [Dane do analizy](dane/)
+- [Klub Języka Danych](https://klub.jezykdanych.pl/) – miejsce, w którym możesz na bieżąco dyskutować o danych i projekcie
 - [Formularz zgłoszenia gotowej wizualizacji](https://docs.google.com/forms/d/e/1FAIpQLSebfpsgvPVQEbwd8dk5UdVomL_DNcmrggKelGgwzLzvf6ebgw/viewform)
 - Materiały graficzne i identyfikacja wizualna znajdziesz na stronie [projektu](https://bingo.jezykdanych.pl/)
 
