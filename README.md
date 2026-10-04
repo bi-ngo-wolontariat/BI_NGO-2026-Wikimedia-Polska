@@ -81,7 +81,7 @@ Dane mogą zawierać uproszczenia wynikające ze sposobu działania źródeł, d
 - [Formularz zgłoszenia gotowej wizualizacji](https://docs.google.com/forms/d/e/1FAIpQLSebfpsgvPVQEbwd8dk5UdVomL_DNcmrggKelGgwzLzvf6ebgw/viewform)
 - Materiały graficzne i identyfikacja wizualna znajdziesz na stronie [projektu](https://bingo.jezykdanych.pl/)
 
-Gotową pracę należy zgłosić za pomocą formularza najpóźniej **3 października 2026 roku do końca dnia**.
+Gotową pracę należy zgłosić za pomocą formularza najpóźniej **4 października 2026 roku do końca dnia**.
 
 ## Źródła danych i zasady wykorzystania
 
@@ -114,7 +114,7 @@ Dane udostępnione w repozytorium możesz uzupełnić o informacje pochodzące z
 
 Czekamy na Twoje wizualizacje 💛
 
-Gotową pracę prześlij za pomocą [formularza zgłoszeniowego](https://docs.google.com/forms/d/e/1FAIpQLSebfpsgvPVQEbwd8dk5UdVomL_DNcmrggKelGgwzLzvf6ebgw/viewform) **do 3 października 2026 roku włącznie**.
+Gotową pracę prześlij za pomocą [formularza zgłoszeniowego](https://docs.google.com/forms/d/e/1FAIpQLSebfpsgvPVQEbwd8dk5UdVomL_DNcmrggKelGgwzLzvf6ebgw/viewform) **do 4 października 2026 roku włącznie**.
 
 Masz pytania? Napisz do nas - [bingo.wolontariat@gmail.com](mailto:bingo.wolontariat@gmail.com).
 
